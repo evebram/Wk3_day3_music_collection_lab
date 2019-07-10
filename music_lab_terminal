@@ -1,0 +1,706 @@
+Last login: Tue Jul  9 11:41:23 on ttys000
+➜  ~ cd codeclan_work/week_03/day_3 
+➜  day_3 open .
+➜  day_3 ls
+one_to_many_pizza_start.zip
+➜  day_3 cd one_to_many_pizza_start 
+➜  one_to_many_pizza_start cd pizza_shop/models 
+➜  models touch customers.rb
+➜  models cd   
+➜  ~ cd codeclan_work 
+➜  codeclan_work cd e32_classnotes 
+➜  e32_classnotes git:(master) ✗ git pull
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 13 (delta 1), reused 13 (delta 1), pack-reused 0
+Unpacking objects: 100% (13/13), done.
+From github.com:codeclan/e32_classnotes
+   eb5b0cd..7991912  master     -> origin/master
+Updating eb5b0cd..7991912
+Fast-forward
+ week_03/day_2/hw_relationship_modelling.md         |  13 +++
+ .../bounty_hunter_lab_solution/README.md           |   6 ++
+ .../bounty_hunter_lab_solution/console.rb          |  31 ++++++
+ .../db/bounty_hunter.sql                           |   9 ++
+ .../bounty_hunter_lab_solution/models/bounty.rb    | 111 +++++++++++++++++++++
+ 5 files changed, 170 insertions(+)
+ create mode 100644 week_03/day_2/hw_relationship_modelling.md
+ create mode 100644 week_03/day_2/lab_bounty_hunter/bounty_hunter_lab_solution/README.md
+ create mode 100644 week_03/day_2/lab_bounty_hunter/bounty_hunter_lab_solution/console.rb
+ create mode 100644 week_03/day_2/lab_bounty_hunter/bounty_hunter_lab_solution/db/bounty_hunter.sql
+ create mode 100644 week_03/day_2/lab_bounty_hunter/bounty_hunter_lab_solution/models/bounty.rb
+➜  e32_classnotes git:(master) ✗ ../week_03/day_3/one_to_many_pizza 
+➜  one_to_many_pizza atom .
+➜  one_to_many_pizza ../../../e32_classnotes 
+➜  e32_classnotes git:(master) ✗ git pull
+remote: Enumerating objects: 26, done.
+remote: Counting objects: 100% (26/26), done.
+remote: Compressing objects: 100% (19/19), done.
+remote: Total 24 (delta 1), reused 24 (delta 1), pack-reused 0
+Unpacking objects: 100% (24/24), done.
+From github.com:codeclan/e32_classnotes
+   7991912..268e07a  master     -> origin/master
+Updating 7991912..268e07a
+Fast-forward
+ week_03/day_3/music_library_lab_hw/music_lab.md    |  24 ++
+ .../day_3/one_to_many_pizza_shop/one_to_many.md    | 391 +++++++++++++++++++++
+ .../one_to_many_pizza_end/pizza_shop/db/console.rb |  35 ++
+ .../pizza_shop/db/pizza_shop.sql                   |  14 +
+ .../pizza_shop/db/sql_runner.rb                    |  16 +
+ .../pizza_shop/models/customer.rb                  |  82 +++++
+ .../pizza_shop/models/pizza_order.rb               |  87 +++++
+ .../pizza_shop/db/console.rb                       |   7 +
+ .../pizza_shop/db/pizza_shop.sql                   |   9 +
+ .../pizza_shop/models/pizza_order.rb               |  92 +++++
+ 10 files changed, 757 insertions(+)
+ create mode 100644 week_03/day_3/music_library_lab_hw/music_lab.md
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many.md
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_end/pizza_shop/db/console.rb
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_end/pizza_shop/db/pizza_shop.sql
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_end/pizza_shop/db/sql_runner.rb
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_end/pizza_shop/models/customer.rb
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_end/pizza_shop/models/pizza_order.rb
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_start/pizza_shop/db/console.rb
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_start/pizza_shop/db/pizza_shop.sql
+ create mode 100644 week_03/day_3/one_to_many_pizza_shop/one_to_many_pizza_start/pizza_shop/models/pizza_order.rb
+➜  e32_classnotes git:(master) ✗ git pull
+Already up to date.
+➜  e32_classnotes git:(master) ✗ ../../codeclan_work/week_03/day_3 
+➜  day_3 mkdir music_collection_lab
+➜  day_3 cd music_collection_lab 
+➜  music_collection_lab mkdir db models
+➜  music_collection_lab ls
+db     models
+➜  music_collection_lab cd db 
+➜  db touch console.rb music_collection.sql sql_runner.rb
+➜  db ls
+console.rb           music_collection.sql sql_runner.rb
+➜  db ../
+➜  music_collection_lab cd models
+➜  models touch artists.rb albums.rb
+➜  models ../
+➜  music_collection_lab atom .
+➜  music_collection_lab git init
+Initialized empty Git repository in /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/.git/
+➜  music_collection_lab git:(master) ✗ gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "initial commit"
+[master (root-commit) 176ea93] initial commit
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 db/console.rb
+ create mode 100644 db/music_collection.sql
+ create mode 100644 db/sql_runner.rb
+ create mode 100644 models/albums.rb
+ create mode 100644 models/artists.rb
+➜  music_collection_lab git:(master) git remote add origin git@github.com:evebram/Wk3_day3_music_collection_lab.git
+git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 369 bytes | 369.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To github.com:evebram/Wk3_day3_music_collection_lab.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+➜  music_collection_lab git:(master) git push
+Everything up-to-date
+➜  music_collection_lab git:(master) clear
+
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "initialize artists"
+[master 129de18] initialize artists
+ 1 file changed, 11 insertions(+)
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "initialize album class 
+dquote> "
+[master d3a21e5] initialize album class
+ 1 file changed, 13 insertions(+)
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "created sql table"
+[master 9751bb3] created sql table
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "create console"
+[master b2f7061] create console
+ 2 files changed, 12 insertions(+)
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "create sql runner"
+[master 5e9b816] create sql runner
+ 1 file changed, 19 insertions(+)
+➜  music_collection_lab git:(master) createdb artists_albums
+➜  music_collection_lab git:(master) psql -d artists_albums
+psql (11.3)
+Type "help" for help.
+
+artists_albums=# \q
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) git commit -m "created database"
+On branch master
+Your branch is ahead of 'origin/master' by 5 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+➜  music_collection_lab git:(master) git push
+Enumerating objects: 32, done.
+Counting objects: 100% (28/28), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (24/24), 2.51 KiB | 1.25 MiB/s, done.
+Total 24 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To github.com:evebram/Wk3_day3_music_collection_lab.git
+   176ea93..5e9b816  master -> master
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "def save in artists.rb"
+[master f4d526b] def save in artists.rb
+ 1 file changed, 10 insertions(+)
+➜  music_collection_lab git:(master) ruby db/console.rb 
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `async_prepare': ERROR:  relation "artists" does not exist (PG::UndefinedTable)
+LINE 1: INSERT INTO artists (name)
+                    ^
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:18:in `save'
+	from db/console.rb:6:in `<main>'
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `async_prepare': ERROR:  relation "artists" does not exist (PG::UndefinedTable)
+LINE 1: INSERT INTO artists (name)
+                    ^
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:18:in `save'
+	from db/console.rb:6:in `<main>'
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `async_prepare': ERROR:  relation "artists" does not exist (PG::UndefinedTable)
+LINE 1: INSERT INTO artists (name)
+                    ^
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:18:in `save'
+	from db/console.rb:6:in `<main>'
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `async_prepare': ERROR:  relation "artists" does not exist (PG::UndefinedTable)
+LINE 1: INSERT INTO artists (name)
+                    ^
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:11:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:18:in `save'
+	from db/console.rb:6:in `<main>'
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums -f db/music_collection.sql
+psql:db/music_collection.sql:1: NOTICE:  table "albums" does not exist, skipping
+DROP TABLE
+psql:db/music_collection.sql:2: NOTICE:  table "artists" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb 
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 15 :
+
+    10: #   'genre' => 'pop'
+    11: #   'artist_id' => artist1.id
+    12: #   })
+    13: 
+    14: binding.pry
+ => 15: nil
+
+[1] pry(main)> artist1
+=> #<Artist:0x007fdeb4964368 @id=1, @name="Adele">
+[2] pry(main)> artist1.save
+=> 2
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ gaa        
+➜  music_collection_lab git:(master) ✗ git commit -m "artists save works!"
+dquote> "
+[master 29ea62e] artists save works
+ 3 files changed, 15 insertions(+), 9 deletions(-)
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "album save"
+[master 6da4de8] album save
+ 1 file changed, 12 insertions(+)
+➜  music_collection_lab git:(master) ruby db/console.rb 
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 15 :
+
+    10: #   'genre' => 'pop'
+    11: #   'artist_id' => artist1.id
+    12: #   })
+    13: 
+    14: binding.pry
+ => 15: nil
+
+[1] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+db/console.rb:11: syntax error, unexpected tSTRING_BEG, expecting '}'
+  'artist_id' => artist1.id
+   ^
+db/console.rb:11: syntax error, unexpected =>, expecting end-of-input
+  'artist_id' => artist1.id
+                ^
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+db/console.rb:8:in `<main>': uninitialized constant Album (NameError)
+Did you mean?  Albums
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 15 :
+
+    10:   'genre' => 'pop',
+    11:   'artist_id' => artist1.id
+    12:   })
+    13: 
+    14: binding.pry
+ => 15: nil
+
+[1] pry(main)> album1
+=> #<Albums:0x007ff17d1dcba0 @artist_id=5, @genre="pop", @title="Dancing Queen">
+[2] pry(main)> album1.save
+=> 1
+[3] pry(main)> \q
+SyntaxError: unexpected $undefined, expecting end-of-input
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ gaa 
+➜  music_collection_lab git:(master) ✗ git commit -m "new album and artist"
+[master 211537e] new album and artist
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+➜  music_collection_lab git:(master) ruby db/console.rb                  
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 24 :
+
+    19:     'genre' => 'pop',
+    20:     'artist_id' => artist2.id
+    21:     })
+    22: 
+    23: binding.pry
+ => 24: nil
+
+[1] pry(main)> albums.all
+NameError: undefined local variable or method `albums' for main:Object
+Did you mean?  album2
+               album1
+from (pry):1:in `<main>'
+[2] pry(main)> album.all
+NameError: undefined local variable or method `album' for main:Object
+Did you mean?  album2
+               album1
+from (pry):2:in `<main>'
+[3] pry(main)> album1.all
+NoMethodError: undefined method `all' for #<Albums:0x007fcfab1cced8>
+from (pry):3:in `<main>'
+[4] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ psql - d artists_ablums
+psql: warning: extra command-line argument "artists_ablums" ignored
+psql: FATAL:  role "d" does not exist
+➜  music_collection_lab git:(master) ✗ psql - d artists_albums
+psql: warning: extra command-line argument "artists_albums" ignored
+psql: FATAL:  role "d" does not exist
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums 
+psql (11.3)
+Type "help" for help.
+
+artists_albums=# SELECT * FROM albums
+artists_albums-# ;
+ id |     title     | genre | artist_id 
+----+---------------+-------+-----------
+  1 | Dancing Queen | pop   |         5
+(1 row)
+
+artists_albums=# \q
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb     
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 24 :
+
+    19:     'genre' => 'pop',
+    20:     'artist_id' => artist2.id
+    21:     })
+    22: 
+    23: binding.pry
+ => 24: nil
+
+[1] pry(main)> album2
+=> #<Albums:0x007fc8fa8988a0 @artist_id=9, @genre="pop", @title="Ray of Light">
+[2] pry(main)> album2.save
+=> 2
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums
+psql (11.3)
+Type "help" for help.
+
+artists_albums=# SELECT * FROM albums;
+ id |     title     | genre | artist_id 
+----+---------------+-------+-----------
+  1 | Dancing Queen | pop   |         5
+  2 | Ray of Light  | pop   |         9
+(2 rows)
+
+artists_albums=# /q
+artists_albums-# \q
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb 
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 24 :
+
+    19:     'genre' => 'pop',
+    20:     'artist_id' => artist2.id
+    21:     })
+    22: 
+    23: binding.pry
+ => 24: nil
+
+[1] pry(main)> artist2
+=> #<Artist:0x007f9df09c27b0 @id=11, @name="Madonna">
+[2] pry(main)> artist2.save
+=> 12
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "done see all thing"
+[master 4371bf6] done see all thing
+ 1 file changed, 5 insertions(+)
+➜  music_collection_lab git:(master) git push
+Enumerating objects: 32, done.
+Counting objects: 100% (32/32), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (25/25), 2.73 KiB | 1.36 MiB/s, done.
+Total 25 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To github.com:evebram/Wk3_day3_music_collection_lab.git
+   5e9b816..4371bf6  master -> master
+➜  music_collection_lab git:(master) gaa
+➜  music_collection_lab git:(master) ✗ git commit -m "self.all artists"
+[master efe213d] self.all artists
+ 1 file changed, 6 insertions(+)
+➜  music_collection_lab git:(master) ruby db/console.rb 
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 32 :
+
+    27:       })
+    28: 
+    29:   
+    30: 
+    31: binding.pry
+ => 32: nil
+
+[1] pry(main)> album3
+=> #<Albums:0x007faa8b8e7488 @artist_id=14, @genre="pop", @title="True Blue">
+[2] pry(main)> album3.save
+=> 3
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums
+psql (11.3)
+Type "help" for help.
+
+artists_albums=# SELECT * FROM albums;
+ id |     title     | genre | artist_id 
+----+---------------+-------+-----------
+  1 | Dancing Queen | pop   |         5
+  2 | Ray of Light  | pop   |         9
+  3 | True Blue     | pop   |        14
+(3 rows)
+
+artists_albums=# !!!
+artists_albums-# \q
+➜  music_collection_lab git:(master) ✗ gaa 
+➜  music_collection_lab git:(master) ✗ git commit -m "end of lab"
+[master 0b67da1] end of lab
+ 1 file changed, 8 insertions(+)
+➜  music_collection_lab git:(master) git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 942 bytes | 942.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:evebram/Wk3_day3_music_collection_lab.git
+   4371bf6..0b67da1  master -> master
+➜  music_collection_lab git:(master) ruby db/console.rb        
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 32 :
+
+    27:       })
+    28: 
+    29: 
+    30: 
+    31: binding.pry
+ => 32: nil
+
+[1] pry(main)> Album.all
+NameError: uninitialized constant Album
+Did you mean?  Albums
+from (pry):1:in `<main>'
+[2] pry(main)> !!!
+➜  music_collection_lab git:(master) ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 32 :
+
+    27:       })
+    28: 
+    29: 
+    30: 
+    31: binding.pry
+ => 32: nil
+
+[1] pry(main)> Albums.all
+=> [#<Albums:0x007fc4563ceac0 @artist_id=0, @genre=nil, @title=nil>, #<Albums:0x007fc4563cea70 @artist_id=0, @genre=nil, @title=nil>, #<Albums:0x007fc4563cea20 @artist_id=0, @genre=nil, @title=nil>]
+[2] pry(main)> !!!
+➜  music_collection_lab git:(master) ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 32 :
+
+    27:       })
+    28: 
+    29: 
+    30: 
+    31: binding.pry
+ => 32: nil
+
+[1] pry(main)> Albums.all
+=> [#<Albums:0x007fb036086c70 @artist_id=0, @genre=nil, @title=nil>, #<Albums:0x007fb036086c20 @artist_id=0, @genre=nil, @title=nil>, #<Albums:0x007fb036086ba8 @artist_id=0, @genre=nil, @title=nil>]
+[2] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `async_exec_prepared': ERROR:  update or delete on table "artists" violates foreign key constraint "albums_artist_id_fkey" on table "albums" (PG::ForeignKeyViolation)
+DETAIL:  Key (id)=(5) is still referenced from table "albums".
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:30:in `delete_all'
+	from db/console.rb:5:in `<main>'
+➜  music_collection_lab git:(master) ✗ dropdb artists_albums
+➜  music_collection_lab git:(master) ✗ createdb artists_albums
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums -f db/music_collection.sql
+psql:db/music_collection.sql:1: NOTICE:  table "albums" does not exist, skipping
+DROP TABLE
+psql:db/music_collection.sql:2: NOTICE:  table "artists" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums -f db/music_collection.sql
+DROP TABLE
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb                             
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 36 :
+
+    31:       })
+    32: 
+    33: 
+    34: 
+    35: binding.pry
+ => 36: nil
+
+[1] pry(main)> Albums.all
+=> [#<Albums:0x007fd70fa648f0 @artist_id=0, @genre=nil, @title=nil>]
+[2] pry(main)> Artist.all
+=> [#<Artist:0x007fd70f9d41b0 @name=nil>, #<Artist:0x007fd70f9d4160 @name=nil>]
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/pg-1.1.4/lib/PG.rb:38: warning: already initialized constant PG::VERSION
+/Users/evebramley/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/pg-1.1.4/lib/pg.rb:38: warning: previous definition of VERSION was here
+/Users/evebramley/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/pg-1.1.4/lib/PG.rb:41: warning: already initialized constant PG::REVISION
+/Users/evebramley/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/pg-1.1.4/lib/pg.rb:41: warning: previous definition of REVISION was here
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `async_exec_prepared': ERROR:  update or delete on table "artists" violates foreign key constraint "albums_artist_id_fkey" on table "albums" (PG::ForeignKeyViolation)
+DETAIL:  Key (id)=(1) is still referenced from table "albums".
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:31:in `delete_all'
+	from db/console.rb:5:in `<main>'
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `async_exec_prepared': ERROR:  update or delete on table "artists" violates foreign key constraint "albums_artist_id_fkey" on table "albums" (PG::ForeignKeyViolation)
+DETAIL:  Key (id)=(1) is still referenced from table "albums".
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:31:in `delete_all'
+	from db/console.rb:5:in `<main>'
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+/Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `async_exec_prepared': ERROR:  update or delete on table "artists" violates foreign key constraint "albums_artist_id_fkey" on table "albums" (PG::ForeignKeyViolation)
+DETAIL:  Key (id)=(1) is still referenced from table "albums".
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/sql_runner.rb:12:in `run'
+	from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/artists.rb:31:in `delete_all'
+	from db/console.rb:5:in `<main>'
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 36 :
+
+    31:       })
+    32: 
+    33: 
+    34: 
+    35: binding.pry
+ => 36: nil
+
+[1] pry(main)> Artist.all
+=> [#<Artist:0x007fb597a663d8 @id=3, @name="Adele">, #<Artist:0x007fb597a66310 @id=4, @name="Madonna">]
+[2] pry(main)> Album.all
+NameError: uninitialized constant Album::Albums
+Did you mean?  Album
+from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/albums.rb:27:in `block in all'
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 36 :
+
+    31:       })
+    32: 
+    33: 
+    34: 
+    35: binding.pry
+ => 36: nil
+
+[1] pry(main)> Album.all
+=> [#<Album:0x007fef5a3036e8 @artist_id=5, @genre="pop", @id=3, @title="Dancing Queen">]
+[2] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 38 :
+
+    33:       album3.save()
+    34: 
+    35: 
+    36: 
+    37: binding.pry
+ => 38: nil
+
+[1] pry(main)> Album.all
+=> [#<Album:0x007fb2c7205338 @artist_id=7, @genre="pop", @id=4, @title="Dancing Queen">,
+ #<Album:0x007fb2c7205248 @artist_id=8, @genre="pop", @id=5, @title="Ray of Light">,
+ #<Album:0x007fb2c7205130 @artist_id=8, @genre="pop", @id=6, @title="True Blue">]
+[2] pry(main)> 
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums
+psql (11.3)
+Type "help" for help.
+
+artists_albums=# SELECT * FROM artist_id(8);
+ERROR:  function artist_id(integer) does not exist
+LINE 1: SELECT * FROM artist_id(8);
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+artists_albums=# SELECT * FROM albums WHERE artist_id = 8
+artists_albums-# ;
+ id |    title     | genre | artist_id 
+----+--------------+-------+-----------
+  5 | Ray of Light | pop   |         8
+  6 | True Blue    | pop   |         8
+(2 rows)
+
+artists_albums=# !!!
+artists_albums-# \q
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb 
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 38 :
+
+    33:       album3.save()
+    34: 
+    35: 
+    36: 
+    37: binding.pry
+ => 38: nil
+
+[1] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ psql -d artists_albums
+psql (11.3)
+Type "help" for help.
+
+artists_albums=# Album.find;
+ERROR:  syntax error at or near "Album"
+LINE 1: Album.find;
+        ^
+artists_albums=# albums.all
+artists_albums-# ;
+ERROR:  syntax error at or near "albums"
+LINE 1: albums.all
+        ^
+artists_albums=# \q
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb 
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 38 :
+
+    33:       album3.save()
+    34: 
+    35: 
+    36: 
+    37: binding.pry
+ => 38: nil
+
+[1] pry(main)> Album.all
+=> [#<Album:0x007f8539320440 @artist_id=11, @genre="pop", @id=10, @title="Dancing Queen">,
+ #<Album:0x007f8539320350 @artist_id=12, @genre="pop", @id=11, @title="Ray of Light">,
+ #<Album:0x007f8539320238 @artist_id=12, @genre="pop", @id=12, @title="True Blue">]
+[2] pry(main)> Album.find
+ArgumentError: wrong number of arguments (given 0, expected 1)
+from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/albums.rb:30:in `find'
+[3] pry(main)> Album.find(8)
+NoMethodError: undefined method `[]' for nil:NilClass
+from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/albums.rb:8:in `initialize'
+[4] pry(main)> Album.find[8]
+ArgumentError: wrong number of arguments (given 0, expected 1)
+from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/albums.rb:30:in `find'
+[5] pry(main)> \q
+SyntaxError: unexpected $undefined, expecting end-of-input
+[5] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 38 :
+
+    33:       album3.save()
+    34: 
+    35: 
+    36: 
+    37: binding.pry
+ => 38: nil
+
+[1] pry(main)> Album.find(13)
+=> #<Album:0x007fc9dfa542d0 @artist_id=13, @genre="pop", @id=13, @title="Dancing Queen">
+[2] pry(main)> Album.find(14)
+=> #<Album:0x007fc9df9e7d88 @artist_id=14, @genre="pop", @id=14, @title="Ray of Light">
+[3] pry(main)> Album.find(14)
+=> #<Album:0x007fc9df9adc50 @artist_id=14, @genre="pop", @id=14, @title="Ray of Light">
+[4] pry(main)> Album.find(15)
+NoMethodError: undefined method `[]' for nil:NilClass
+from /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/models/albums.rb:8:in `initialize'
+[5] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 38 :
+
+    33:       album3.save()
+    34: 
+    35: 
+    36: 
+    37: binding.pry
+ => 38: nil
+
+[1] pry(main)> Album.all
+=> [#<Album:0x007fde913fe888 @artist_id=15, @genre="pop", @id=16, @title="Dancing Queen">,
+ #<Album:0x007fde913fe608 @artist_id=16, @genre="pop", @id=17, @title="Ray of Light">,
+ #<Album:0x007fde913fe360 @artist_id=16, @genre="pop", @id=18, @title="True Blue">]
+[2] pry(main)> Album.find(16)
+=> [#<Album:0x007fde9137cb08 @artist_id=16, @genre="pop", @id=17, @title="Ray of Light">, #<Album:0x007fde9137ca18 @artist_id=16, @genre="pop", @id=18, @title="True Blue">]
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ ruby db/console.rb
+
+From: /Users/evebramley/codeclan_work/week_03/day_3/music_collection_lab/db/console.rb @ line 38 :
+
+    33:       album3.save()
+    34: 
+    35: 
+    36: 
+    37: binding.pry
+ => 38: nil
+
+[1] pry(main)> Album.all
+=> [#<Album:0x007f9e102b2e50 @artist_id=17, @genre="pop", @id=19, @title="Dancing Queen">,
+ #<Album:0x007f9e102b2ce8 @artist_id=18, @genre="pop", @id=20, @title="Ray of Light">,
+ #<Album:0x007f9e102b2b30 @artist_id=18, @genre="pop", @id=21, @title="True Blue">]
+[2] pry(main)> Album.find(18)
+=> [#<Album:0x007f9e102203c0 @artist_id=18, @genre="pop", @id=20, @title="Ray of Light">, #<Album:0x007f9e10220258 @artist_id=18, @genre="pop", @id=21, @title="True Blue">]
+[3] pry(main)> !!!
+➜  music_collection_lab git:(master) ✗ gaa 
+➜  music_collection_lab git:(master) ✗ git commit -m "find album by artist"
+[master f564ab5] find album by artist
+ 3 files changed, 36 insertions(+), 9 deletions(-)
+➜  music_collection_lab git:(master) git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 987 bytes | 987.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:evebram/Wk3_day3_music_collection_lab.git
+   0b67da1..f564ab5  master -> master
+➜  music_collection_lab git:(master) 
