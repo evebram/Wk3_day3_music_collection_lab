@@ -17,6 +17,7 @@ album1 = Album.new({
   'artist_id' => artist1.id
   })
 album1.save()
+album1.update()
 
   album2 = Album.new({
     'title' => 'Ray of Light',
